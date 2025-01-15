@@ -1,298 +1,253 @@
-/* Animación para desvanecimiento suave al cargar la página */
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
+/* Reset general */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
 }
 
-/* Animación para deslizamiento en el botón de comprar todo */
-@keyframes slideUp {
-    0% {
-        transform: translateY(20px);
-        opacity: 0;
-    }
-    100% {
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
-
-/* Aplicar la animación de desvanecimiento al body */
+/* Estilo general del cuerpo */
 body {
-    animation: fadeIn 1.5s ease-out;
+    background-color: #f5f5f5;
+    color: #333;
+    font-size: 16px;
+    line-height: 1.6;
 }
 
-/* Animación para los elementos del header */
+/* Encabezado */
 header {
-    animation: fadeIn 1.5s ease-out 0.5s forwards; /* Retrasar la animación */
-}
-
-/* Animación para los productos */
-.product {
-    animation: fadeIn 1.5s ease-out;
-}
-
-/* Animación para el botón "Comprar todo" */
-#buyAllButton {
-    animation: slideUp 0.5s ease-out 1s forwards; /* Retraso de 1 segundo */
-}
-
-/* Animación para los botones del carrito y otros botones */
-button {
-    animation: fadeIn 1.5s ease-out 1.5s forwards; /* Retraso de 1.5 segundos */
-}
-
-/* Modo oscuro con animaciones */
-body.dark-mode {
-    background-color: #121212;
-    color: #ffffff;
-    animation: fadeIn 1.5s ease-out;
-}
-
-/* Animación para los elementos del header en modo oscuro */
-header.dark-mode {
-    background-color: #1f1f1f;
-    animation: fadeIn 1.5s ease-out 0.5s forwards;
-}
-
-/* Animación para los productos en modo oscuro */
-.product.dark-mode {
-    background-color: #333;
-    color: #fff;
-    animation: fadeIn 1.5s ease-out;
-}
-
-/* Animación para botones en modo oscuro */
-button.dark-mode {
-    background-color: #444;
-    color: #fff;
-    animation: fadeIn 1.5s ease-out 1.5s forwards;
-}
-
-/* Animación para el footer en modo oscuro */
-footer.dark-mode {
-    background-color: #222;
-    animation: fadeIn 1.5s ease-out 0.5s forwards;
-}
-
-
-/* Estilo para la imagen del logo */
-.image {
-    width: 80px;  /* Ajusta el tamaño a tu preferencia */
-    height: auto;  /* Mantiene la proporción de la imagen */
-    margin-right: 20px; /* Espacio a la derecha del logo si es necesario */
-}
-
-.carrito-logo {
-    width: 20px;  /* Ajusta el tamaño del logo */
-    height: auto; /* Mantiene la proporción de la imagen */
-    margin-right: 10px; /* Espacio entre el logo y el texto */
-    vertical-align: middle; /* Alinea la imagen con el texto */
-}
-
-/* Cabecera */
-header {
-    background-color: #333;
-    color: #fff;
-    padding: 20px;
+    background-color: #fff;
+    border-bottom: 2px solid #f0f0f0;
+    padding: 15px 40px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap;
-    transition: background-color 0.3s ease;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-header.dark-mode {
-    background-color: #1f1f1f; /* Fondo más oscuro para el header */
+header img {
+    height: 50px;
 }
 
-header h1 {
-    font-size: 2rem;
-}
-
-nav {
-    display: flex;
-    gap: 20px;
-}
-
-nav a {
-    color: #fff;
+header nav a {
+    color: #333;
+    margin: 0 15px;
     text-decoration: none;
-    font-size: 1rem;
-    transition: color 0.3s ease;
-}
-
-nav a:hover {
-    color: #ff6347;
-}
-
-nav a.dark-mode {
-    color: #bbb; /* Color más tenue para los enlaces en modo oscuro */
-}
-
-#carritoContenedor {
-    font-size: 1rem;
-}
-
-#numeroCarrito {
     font-weight: bold;
-    color: #ff6347;
+    font-size: 16px;
 }
 
-/* Main */
+header nav a:hover {
+    color: #f39c12;
+}
+
+/* Botón de modo oscuro */
+button#darkModeToggle {
+    background-color: #1f1609;
+    color: #fff;
+    border: none;
+    padding: 8px 20px;
+    cursor: pointer;
+    font-size: 14px;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+
+button#darkModeToggle:hover {
+    background-color: #291d13;
+}
+
+/* Contenido principal */
 main {
+    margin-top: 100px;
+    display: flex;
+    justify-content: space-between;
     padding: 20px;
 }
 
-.buy-all-container {
-    text-align: center;
-    margin-bottom: 20px;
+/* Barra lateral (filtros) */
+aside {
+    width: 20%;
+    background: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-#buyAllButton {
-    font-size: 1.2rem;
-    padding: 10px 20px;
-    background-color: #35110a;
-    color: white;
-    border: none;
-    border-radius: 5px;
+aside h3 {
+    font-size: 18px;
+    color: #372a14;
+    margin-bottom: 10px;
+}
+
+aside ul {
+    list-style: none;
+    margin-top: 10px;
+}
+
+aside ul li {
+    margin: 10px 0;
+}
+
+aside ul li label {
+    font-size: 14px;
+    color: #333;
     cursor: pointer;
-    transition: background-color 0.3s ease;
 }
 
-#buyAllButton:hover {
-    background-color: #41140e;
-}
-
-/* Productos */
+/* Área de productos */
 .products {
+    width: 75%;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 20px;
-    margin-top: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px; /* Aumenta el espacio entre los cuadros */
 }
 
 .product {
     background-color: #fff;
-    border-radius: 8px;
+    border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 20px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
-}
-
-.product.dark-mode {
-    background-color: #333; /* Fondo oscuro para productos */
-    color: #fff; /* Texto claro para productos */
+    padding: 20px;
 }
 
 .product:hover {
-    transform: translateY(-10px);
+    transform: translateY(-5px);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .product img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 5px;
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
     margin-bottom: 15px;
 }
 
+.product .discount {
+    background-color: #31201e;
+    color: #fff;
+    padding: 5px 10px;
+    font-size: 12px;
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    border-radius: 5px;
+}
+
 .product p {
-    font-size: 1.1rem;
+    font-size: 14px;
+    color: #555;
+    margin: 10px 0;
+}
+
+.product .price {
+    font-size: 18px;
+    font-weight: bold;
+    color: #f39c12;
     margin-bottom: 10px;
 }
 
-button {
-    padding: 8px 16px;
-    font-size: 1rem;
+.product .old-price {
+    font-size: 14px;
+    color: #999;
+    text-decoration: line-through;
+}
+
+.product button {
+    background-color: #371810;
+    color: white;
     border: none;
+    padding: 10px 20px;
     cursor: pointer;
-    border-radius: 5px;
-    margin: 5px;
-    transition: background-color 0.3s ease;
+    border-radius: 30px;
+    font-size: 14px;
+    transition: all 0.3s ease;
 }
 
-button.voteUp {
-    background-color: #0f4711;
-    color: white;
+.product button:hover {
+    background-color: #24190b;
 }
 
-button.voteDown {
-    background-color: #391714;
-    color: white;
-}
-
-button.addToCart {
-    background-color: #513a19;
-    color: white;
-}
-
-button:hover {
-    opacity: 0.8;
-}
-
-button.dark-mode {
-    background-color: #444; /* Color más oscuro para botones */
-    color: #fff; /* Texto claro para botones */
-}
-
-/* Footer */
+/* Pie de página */
 footer {
     background-color: #333;
     color: #fff;
     text-align: center;
-    padding: 15px 0;
+    padding: 20px 0;
+    font-size: 14px;
     margin-top: 20px;
-    transition: background-color 0.3s ease;
+}
+
+/* Modo oscuro */
+body.dark-mode {
+    background-color: #181818;
+    color: #f5f5f5;
+}
+
+header.dark-mode {
+    background-color: #333;
+}
+
+header.dark-mode nav a {
+    color: #f5f5f5;
+}
+
+.product.dark-mode {
+    background-color: #333;
+    color: #f5f5f5;
+}
+
+.product.dark-mode button {
+    background-color: #555;
 }
 
 footer.dark-mode {
-    background-color: #222; /* Fondo más oscuro para el footer */
+    background-color: #222;
 }
 
-footer p {
-    font-size: 0.9rem;
+/* Estilo del carrito */
+#carrito {
+    width: 300px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    position: fixed;
+    top: 100px;
+    right: 20px;
+    z-index: 1000;
 }
 
-/* Estilo responsivo */
-@media (max-width: 768px) {
-    header {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    nav {
-        margin-top: 10px;
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .products {
-        grid-template-columns: 1fr 1fr;
-    }
+#carrito h3 {
+    font-size: 18px;
+    color: #41331d;
+    margin-bottom: 15px;
 }
 
-@media (max-width: 480px) {
-    .products {
-        grid-template-columns: 1fr;
-    }
+#carrito p {
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 15px;
+}
 
-    header h1 {
-        font-size: 1.5rem;
-    }
+#carrito button {
+    background-color: #34100b;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 30px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
 
-    #buyAllButton {
-        width: 100%;
-        font-size: 1rem;
-    }
-
-    button {
-        width: 100%;
-        font-size: 1rem;
-        padding: 10px;
-    }
+#carrito button:hover {
+    background-color: #0056b3;
 }

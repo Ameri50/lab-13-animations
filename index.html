@@ -15,20 +15,26 @@
             <a href="#">Inicio</a>
             <a href="#">Stats</a>
         </nav>
-        <div id="carritoContenedor">
-            <!-- Logo del carrito con número de productos -->
-            <img src="img/image-removebg-preview (1).png" alt="carrito" class="carrito-logo">
-            <span id="numeroCarrito">0</span> <!-- Aquí aparece el número de productos -->
-        </div>
         <button id="darkModeToggle">🌙 Modo Oscuro</button>             
     </header>
 
     <main>
+
+<!-- Cart Modal or Section -->
+<div id="carrito">
+    <div id="carritoItems"></div>
+    <p>Total: $<span id="totalPrice">0.00</span></p>
+    <button id="finalizarCompraButton">Finalizar Compra</button>
+</div>
+
+
+
         <!-- Botón para comprar todo -->
         <div class="buy-all-container">
             <button id="buyAllButton">🛒 Comprar Todo</button>
         </div>
 
+        <!-- Lista de Productos -->
         <div class="products">
             <!-- Producto 1 -->
             <div class="product" id="product1">
@@ -38,7 +44,7 @@
                 <button class="voteDown">👎 Votar en contra</button>
                 <p>Votos a favor: <span class="countUp">0</span></p>
                 <p>Votos en contra: <span class="countDown">0</span></p>
-                <button class="addToCart">🛒 Agregar al carrito</button> <!-- Botón Agregar al carrito -->
+                <button class="addToCart">🛒 Agregar al carrito</button>
             </div>
 
             <!-- Producto 2 -->
@@ -49,7 +55,7 @@
                 <button class="voteDown">👎 Votar en contra</button>
                 <p>Votos a favor: <span class="countUp">0</span></p>
                 <p>Votos en contra: <span class="countDown">0</span></p>
-                <button class="addToCart">🛒 Agregar al carrito</button> <!-- Botón Agregar al carrito -->
+                <button class="addToCart">🛒 Agregar al carrito</button>
             </div>
 
             <!-- Producto 3 -->
@@ -60,7 +66,7 @@
                 <button class="voteDown">👎 Votar en contra</button>
                 <p>Votos a favor: <span class="countUp">0</span></p>
                 <p>Votos en contra: <span class="countDown">0</span></p>
-                <button class="addToCart">🛒 Agregar al carrito</button> <!-- Botón Agregar al carrito -->
+                <button class="addToCart">🛒 Agregar al carrito</button>
             </div>
 
             <!-- Producto 4 -->
@@ -71,7 +77,7 @@
                 <button class="voteDown">👎 Votar en contra</button>
                 <p>Votos a favor: <span class="countUp">0</span></p>
                 <p>Votos en contra: <span class="countDown">0</span></p>
-                <button class="addToCart">🛒 Agregar al carrito</button> <!-- Botón Agregar al carrito -->
+                <button class="addToCart">🛒 Agregar al carrito</button>
             </div>
 
             <!-- Producto 5 -->
@@ -82,7 +88,7 @@
                 <button class="voteDown">👎 Votar en contra</button>
                 <p>Votos a favor: <span class="countUp">0</span></p>
                 <p>Votos en contra: <span class="countDown">0</span></p>
-                <button class="addToCart">🛒 Agregar al carrito</button> <!-- Botón Agregar al carrito -->
+                <button class="addToCart">🛒 Agregar al carrito</button>
             </div>
 
             <!-- Producto 6 -->
@@ -93,11 +99,11 @@
                 <button class="voteDown">👎 Votar en contra</button>
                 <p>Votos a favor: <span class="countUp">0</span></p>
                 <p>Votos en contra: <span class="countDown">0</span></p>
-                <button class="addToCart">🛒 Agregar al carrito</button> <!-- Botón Agregar al carrito -->
+                <button class="addToCart">🛒 Agregar al carrito</button>
             </div>
 
-            <!-- Producto 7 -->
-            <div class="product" id="product7">
+             <!-- Producto 7 -->
+             <div class="product" id="product7">
                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-lkl_fzdxn8w5pkYW0xrJGsZCxYyzEHnL_A&s" alt="Producto 7" class="product-image">
                 <p>Producto 7</p>
                 <button class="voteUp">👍 Votar a favor</button>
@@ -183,15 +189,22 @@
                 <p>Votos en contra: <span class="countDown">0</span></p>
                 <button class="addToCart">🛒 Agregar al carrito</button> <!-- Botón Agregar al carrito -->
             </div>
-        </div>
+
+            <!-- Productos 7-14 (similar structure as above) -->
+
+        </div> <!-- End of .products -->
     </main>
 
     <footer>
         <p>&copy; 2025 Vote Tracker. Todos los derechos reservados.</p>
     </footer>
 
+    <!-- External JS Files -->
     <script src="js/script.js"></script>
     <script src="js/modooscuro.js"></script>
+    <script src="js/carritodecompras.js"></script>
+    <script src="js/modal.js"></script>
+    <script src="js/comprar.js"></script>
 </body>
 
 </html>
