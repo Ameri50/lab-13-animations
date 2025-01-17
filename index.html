@@ -1,210 +1,181 @@
 <!DOCTYPE html>
 <html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Layout Responsive</title>
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vote Tracker</title>
-    <link rel="stylesheet" href="css/styles.css">
-</head>
+        <!-- Botón para cambiar a modo oscuro -->
+<button id="theme-toggle" class="nav-button">🌙</button>
 
-<body>
-    <header>
-        <img src="img/image-removebg-preview.png" alt="logo" class="image">
-        <nav>
-            <a href="#">Inicio</a>
-            <a href="#">Stats</a>
-        </nav>
-        <button id="darkModeToggle">🌙 Modo Oscuro</button>             
-    </header>
 
+        <div class="logo">
+          <img src="https://github.com/linder3hs/vote-tracker/blob/main/images/vote_tracker_logo.png?raw=true" width="200" alt="" />
+        </div>
+        <div class="nav-buttons">
+          <button class="nav-button">Inicio</button>
+          <button class="nav-button">Stats</button>
+        </div>
+      </header>
+    </div>
     <main>
+      <form id="vote-form">
+        <div class="products-container">
+          <div
+            class="product"
+            data-item="game_boy"
+            data-title="Game Boy"
+            data-description="Videoconsola portátil de Nintendo"
+            data-votes="0"
+            data-price="$100"
+          >
+            <img src="https://github.com/linder3hs/vote-tracker/blob/main/images/game_boy_color.png?raw=true" alt="" />
+            <div class="vote-count">Votos: 0</div>
+            <p>Una consola portátil que marcó una generación de gamers con su estilo simple y juegos adictivos.</p>
+            <div class="product-price">Precio: $100</div>
+          </div>
 
-<!-- Cart Modal or Section -->
-<div id="carrito">
-    <div id="carritoItems"></div>
-    <p>Total: $<span id="totalPrice">0.00</span></p>
-    <button id="finalizarCompraButton">Finalizar Compra</button>
-</div>
+          <div
+            class="product"
+            data-item="ipod_classic"
+            data-title="Ipod classic"
+            data-description="Reproductor de música digital de Apple"
+            data-votes="0"
+            data-price="$150"
+          >
+            <img src="https://github.com/linder3hs/vote-tracker/blob/main/images/ipod_classic.png?raw=true" alt="" />
+            <div class="vote-count">Votos: 0</div>
+            <p>El clásico reproductor de música digital con una gran capacidad de almacenamiento y una interfaz intuitiva.</p>
+            <div class="product-price">Precio: $150</div>
+          </div>
 
+          <div
+            class="product"
+            data-item="playstation_2"
+            data-title="Playstation 2"
+            data-description="Consola de videojuegos de Sony"
+            data-votes="0"
+            data-price="$120"
+          >
+            <img src="https://github.com/linder3hs/vote-tracker/blob/main/images/playstation_2.png?raw=true" alt="" />
+            <div class="vote-count">Votos: 0</div>
+            <p>Una de las consolas de videojuegos más exitosas, conocida por su enorme catálogo de títulos legendarios.</p>
+            <div class="product-price">Precio: $120</div>
+          </div>
 
+          <div
+            class="product"
+            data-item="xbox_360"
+            data-title="Xbox 360"
+            data-description="Consola de videojuegos de Microsoft"
+            data-votes="0"
+            data-price="$130"
+          >
+            <img src="img/image-removebg-preview (3).png" alt="Xbox 360" />
+            <div class="vote-count">Votos: 0</div>
+            <p>Consola de videojuegos que destacó por su plataforma de juegos en línea y gráficos de alta definición.</p>
+            <div class="product-price">Precio: $130</div>
+          </div>
 
-        <!-- Botón para comprar todo -->
-        <div class="buy-all-container">
-            <button id="buyAllButton">🛒 Comprar Todo</button>
+          <div
+            class="product"
+            data-item="nintendo_switch"
+            data-title="Nintendo Switch"
+            data-description="Consola híbrida de Nintendo"
+            data-votes="0"
+            data-price="$300"
+          >
+            <img src="img/image-removebg-preview (4).png" alt="Nintendo Switch" />
+            <div class="vote-count">Votos: 0</div>
+            <p>Consola híbrida que combina lo mejor de los juegos portátiles y de salón, con una experiencia única de juego.</p>
+            <div class="product-price">Precio: $300</div>
+          </div>
+
+          <div
+            class="product"
+            data-item="iphone_5"
+            data-title="iPhone 5"
+            data-description="Smartphone de Apple"
+            data-votes="0"
+            data-price="$200"
+          >
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXT4fxcMaK0LuOSB92HApoLT-BU6wYp-ru2Q&s" alt="iPhone 5" />
+            <div class="vote-count">Votos: 0</div>
+            <p>Smartphone con una pantalla más grande y un diseño elegante, que marcó un hito en la historia de los iPhones.</p>
+            <div class="product-price">Precio: $200</div>
+          </div>
+
+          <div
+            class="product"
+            data-item="macbook_air"
+            data-title="MacBook Air"
+            data-description="Portátil de Apple"
+            data-votes="0"
+            data-price="$1000"
+          >
+            <img src="img/image-removebg-preview (2).png">
+            <div class="vote-count">Votos: 0</div>
+            <p>Portátil ultradelgado y ligero, ideal para quienes necesitan potencia y portabilidad sin sacrificar el rendimiento.</p>
+            <div class="product-price">Precio: $1000</div>
+          </div>
+
+          <div
+            class="product"
+            data-item="monitor_ultrawade"
+            data-title="Monitor"
+            data-description="Monitor ultrawide para una experiencia de visualización inmersiva"
+            data-votes="0"
+            data-price="$250"
+          >
+            <img src="img/images-removebg-preview.png" alt="Monitor">
+            <div class="vote-count">Votos: 0</div>
+            <p>Monitor panorámico que permite una mayor productividad y comodidad visual para el trabajo y el entretenimiento.</p>
+            <div class="product-price">Precio: $250</div>
+          </div>
+
+          <div
+            class="product"
+            data-item="iphone_16"
+            data-title="iPhone 16"
+            data-description="Smartphone de Apple"
+            data-votes="0"
+            data-price="$1200"
+          >
+            <img src="img/image-removebg-preview (5).png" alt="iPhone 16" />
+            <div class="vote-count">Votos: 0</div>
+            <p>El último modelo de iPhone con cámaras mejoradas y un diseño vanguardista que redefine el futuro de los smartphones.</p>
+            <div class="product-price">Precio: $1200</div>
+          </div>
         </div>
 
-        <!-- Lista de Productos -->
-        <div class="products">
-            <!-- Producto 1 -->
-            <div class="product" id="product1">
-                <img src="img/WhatsApp Image 2025-01-14 at 22.48.38.jpeg" alt="Producto 1" class="product-image">
-                <p>Producto 1</p>
-                <button class="voteUp">👍 Votar a favor</button>
-                <button class="voteDown">👎 Votar en contra</button>
-                <p>Votos a favor: <span class="countUp">0</span></p>
-                <p>Votos en contra: <span class="countDown">0</span></p>
-                <button class="addToCart">🛒 Agregar al carrito</button>
-            </div>
+        <!-- Contenedor para el total de votos -->
+        <div class="total-votes-container">
+          <h2>Total de votos: <span id="total-votes">0</span></h2>
+        </div>
 
-            <!-- Producto 2 -->
-            <div class="product" id="product2">
-                <img src="img/WhatsApp Image 2025-01-14 at 22.48.44.jpeg" alt="Producto 2" class="product-image">
-                <p>Producto 2</p>
-                <button class="voteUp">👍 Votar a favor</button>
-                <button class="voteDown">👎 Votar en contra</button>
-                <p>Votos a favor: <span class="countUp">0</span></p>
-                <p>Votos en contra: <span class="countDown">0</span></p>
-                <button class="addToCart">🛒 Agregar al carrito</button>
-            </div>
-
-            <!-- Producto 3 -->
-            <div class="product" id="product3">
-                <img src="img/WhatsApp Image 2025-01-14 at 22.48.50.jpeg" alt="Producto 3" class="product-image">
-                <p>Producto 3</p>
-                <button class="voteUp">👍 Votar a favor</button>
-                <button class="voteDown">👎 Votar en contra</button>
-                <p>Votos a favor: <span class="countUp">0</span></p>
-                <p>Votos en contra: <span class="countDown">0</span></p>
-                <button class="addToCart">🛒 Agregar al carrito</button>
-            </div>
-
-            <!-- Producto 4 -->
-            <div class="product" id="product4">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpxCIJRfgrJJA_qorVlcWl721l6BkxK9zDRg&s" alt="Producto 4" class="product-image">
-                <p>Producto 4</p>
-                <button class="voteUp">👍 Votar a favor</button>
-                <button class="voteDown">👎 Votar en contra</button>
-                <p>Votos a favor: <span class="countUp">0</span></p>
-                <p>Votos en contra: <span class="countDown">0</span></p>
-                <button class="addToCart">🛒 Agregar al carrito</button>
-            </div>
-
-            <!-- Producto 5 -->
-            <div class="product" id="product5">
-                <img src="https://m.media-amazon.com/images/I/51tbWVPtckL._SL1500_.jpg" alt="Producto 5" class="product-image">
-                <p>Producto 5</p>
-                <button class="voteUp">👍 Votar a favor</button>
-                <button class="voteDown">👎 Votar en contra</button>
-                <p>Votos a favor: <span class="countUp">0</span></p>
-                <p>Votos en contra: <span class="countDown">0</span></p>
-                <button class="addToCart">🛒 Agregar al carrito</button>
-            </div>
-
-            <!-- Producto 6 -->
-            <div class="product" id="product6">
-                <img src="https://gmedia.playstation.com/is/image/SIEPDC/ps5-pro-dualsense-image-block-01-en-16aug24?$facebook$" alt="Producto 6" class="product-image">
-                <p>Producto 6</p>
-                <button class="voteUp">👍 Votar a favor</button>
-                <button class="voteDown">👎 Votar en contra</button>
-                <p>Votos a favor: <span class="countUp">0</span></p>
-                <p>Votos en contra: <span class="countDown">0</span></p>
-                <button class="addToCart">🛒 Agregar al carrito</button>
-            </div>
-
-             <!-- Producto 7 -->
-             <div class="product" id="product7">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-lkl_fzdxn8w5pkYW0xrJGsZCxYyzEHnL_A&s" alt="Producto 7" class="product-image">
-                <p>Producto 7</p>
-                <button class="voteUp">👍 Votar a favor</button>
-                <button class="voteDown">👎 Votar en contra</button>
-                <p>Votos a favor: <span class="countUp">0</span></p>
-                <p>Votos en contra: <span class="countDown">0</span></p>
-                <button class="addToCart">🛒 Agregar al carrito</button> <!-- Botón Agregar al carrito -->
-            </div>
-
-            <!-- Producto 8 -->
-            <div class="product" id="product8">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGtSF57VY9AWkYavK_Qdn5I6wN0om4IO-zuw&s" alt="Producto 8" class="product-image">
-                <p>Producto 8</p>
-                <button class="voteUp">👍 Votar a favor</button>
-                <button class="voteDown">👎 Votar en contra</button>
-                <p>Votos a favor: <span class="countUp">0</span></p>
-                <p>Votos en contra: <span class="countDown">0</span></p>
-                <button class="addToCart">🛒 Agregar al carrito</button> <!-- Botón Agregar al carrito -->
-            </div>
-
-            <!-- Producto 9 -->
-            <div class="product" id="product9">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnSNZlqe3rtmEgTRC5V5ofp4Np5tHIKrBXnQ&s" alt="Producto 9" class="product-image">
-                <p>Producto 9</p>
-                <button class="voteUp">👍 Votar a favor</button>
-                <button class="voteDown">👎 Votar en contra</button>
-                <p>Votos a favor: <span class="countUp">0</span></p>
-                <p>Votos en contra: <span class="countDown">0</span></p>
-                <button class="addToCart">🛒 Agregar al carrito</button> <!-- Botón Agregar al carrito -->
-            </div>
-
-            <!-- Producto 10 -->
-            <div class="product" id="product10">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdBhcsUFmUO25CMgbEMOROI-woA1XXDj45Sg&s" alt="Producto 10" class="product-image">
-                <p>Producto 10</p>
-                <button class="voteUp">👍 Votar a favor</button>
-                <button class="voteDown">👎 Votar en contra</button>
-                <p>Votos a favor: <span class="countUp">0</span></p>
-                <p>Votos en contra: <span class="countDown">0</span></p>
-                <button class="addToCart">🛒 Agregar al carrito</button> <!-- Botón Agregar al carrito -->
-            </div>
-
-            <!-- Producto 11 -->
-            <div class="product" id="product11">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-cSV_p04fWA_OAaoqk6MPFz776Zm-XyxKUw&s" alt="Producto 11" class="product-image">
-                <p>Producto 11</p>
-                <button class="voteUp">👍 Votar a favor</button>
-                <button class="voteDown">👎 Votar en contra</button>
-                <p>Votos a favor: <span class="countUp">0</span></p>
-                <p>Votos en contra: <span class="countDown">0</span></p>
-                <button class="addToCart">🛒 Agregar al carrito</button> <!-- Botón Agregar al carrito -->
-            </div>
-
-            <!-- Producto 12 -->
-            <div class="product" id="product12">
-                <img src="https://i.blogs.es/a315ea/glab/450_1000.jpg" alt="Producto 12" class="product-image">
-                <p>Producto 12</p>
-                <button class="voteUp">👍 Votar a favor</button>
-                <button class="voteDown">👎 Votar en contra</button>
-                <p>Votos a favor: <span class="countUp">0</span></p>
-                <p>Votos en contra: <span class="countDown">0</span></p>
-                <button class="addToCart">🛒 Agregar al carrito</button> <!-- Botón Agregar al carrito -->
-            </div>
-
-            <!-- Producto 13 -->
-            <div class="product" id="product13">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_ZqYGucQe65pAV07jW3S9P1Zl58ufztVwJQ&s" alt="Producto 13" class="product-image">
-                <p>Producto 13</p>
-                <button class="voteUp">👍 Votar a favor</button>
-                <button class="voteDown">👎 Votar en contra</button>
-                <p>Votos a favor: <span class="countUp">0</span></p>
-                <p>Votos en contra: <span class="countDown">0</span></p>
-                <button class="addToCart">🛒 Agregar al carrito</button> <!-- Botón Agregar al carrito -->
-            </div>
-
-            <!-- Producto 14 -->
-            <div class="product" id="product14">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSD65E-_gHzgFiVGsXtH0w8_xKkFDEn0wzdjQ&s" alt="Producto 14" class="product-image">
-                <p>Producto 14</p>
-                <button class="voteUp">👍 Votar a favor</button>
-                <button class="voteDown">👎 Votar en contra</button>
-                <p>Votos a favor: <span class="countUp">0</span></p>
-                <p>Votos en contra: <span class="countDown">0</span></p>
-                <button class="addToCart">🛒 Agregar al carrito</button> <!-- Botón Agregar al carrito -->
-            </div>
-
-            <!-- Productos 7-14 (similar structure as above) -->
-
-        </div> <!-- End of .products -->
+        <div class="btn-container">
+          <button type="submit" class="disabled" id="btn-register-vote" disabled>
+            Registrar voto
+          </button>
+        </div>
+      </form>
     </main>
-
     <footer>
-        <p>&copy; 2025 Vote Tracker. Todos los derechos reservados.</p>
+      <div>footer</div>
     </footer>
+    <div class="modal"></div>
+    <div class="overlay"></div>
 
-    <!-- External JS Files -->
     <script src="js/script.js"></script>
-    <script src="js/modooscuro.js"></script>
-    <script src="js/carritodecompras.js"></script>
-    <script src="js/modal.js"></script>
-    <script src="js/comprar.js"></script>
-</body>
+    <script src="js/voto.js"></script>
+    <script src="js/contador.js"></script>
+    <script src="js/theme-toggle.js"></script>
 
+  </body>
 </html>
