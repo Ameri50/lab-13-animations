@@ -10,6 +10,11 @@
   <body>
     <div class="container">
       <header>
+
+        <!-- Botón para cambiar a modo oscuro -->
+<button id="theme-toggle" class="nav-button">🌙</button>
+
+
         <div class="logo">
           <img src="https://github.com/linder3hs/vote-tracker/blob/main/images/vote_tracker_logo.png?raw=true" width="200" alt="" />
         </div>
@@ -27,28 +32,135 @@
             data-item="game_boy"
             data-title="Game Boy"
             data-description="Videoconsola portátil de Nintendo"
+            data-votes="0"
+            data-price="$100"
           >
             <img src="https://github.com/linder3hs/vote-tracker/blob/main/images/game_boy_color.png?raw=true" alt="" />
+            <div class="vote-count">Votos: 0</div>
+            <p>Una consola portátil que marcó una generación de gamers con su estilo simple y juegos adictivos.</p>
+            <div class="product-price">Precio: $100</div>
           </div>
+
           <div
             class="product"
             data-item="ipod_classic"
             data-title="Ipod classic"
             data-description="Reproductor de música digital de Apple"
+            data-votes="0"
+            data-price="$150"
           >
             <img src="https://github.com/linder3hs/vote-tracker/blob/main/images/ipod_classic.png?raw=true" alt="" />
+            <div class="vote-count">Votos: 0</div>
+            <p>El clásico reproductor de música digital con una gran capacidad de almacenamiento y una interfaz intuitiva.</p>
+            <div class="product-price">Precio: $150</div>
           </div>
+
           <div
             class="product"
             data-item="playstation_2"
             data-title="Playstation 2"
             data-description="Consola de videojuegos de Sony"
+            data-votes="0"
+            data-price="$120"
           >
             <img src="https://github.com/linder3hs/vote-tracker/blob/main/images/playstation_2.png?raw=true" alt="" />
+            <div class="vote-count">Votos: 0</div>
+            <p>Una de las consolas de videojuegos más exitosas, conocida por su enorme catálogo de títulos legendarios.</p>
+            <div class="product-price">Precio: $120</div>
+          </div>
+
+          <div
+            class="product"
+            data-item="xbox_360"
+            data-title="Xbox 360"
+            data-description="Consola de videojuegos de Microsoft"
+            data-votes="0"
+            data-price="$130"
+          >
+            <img src="img/image-removebg-preview (3).png" alt="Xbox 360" />
+            <div class="vote-count">Votos: 0</div>
+            <p>Consola de videojuegos que destacó por su plataforma de juegos en línea y gráficos de alta definición.</p>
+            <div class="product-price">Precio: $130</div>
+          </div>
+
+          <div
+            class="product"
+            data-item="nintendo_switch"
+            data-title="Nintendo Switch"
+            data-description="Consola híbrida de Nintendo"
+            data-votes="0"
+            data-price="$300"
+          >
+            <img src="img/image-removebg-preview (4).png" alt="Nintendo Switch" />
+            <div class="vote-count">Votos: 0</div>
+            <p>Consola híbrida que combina lo mejor de los juegos portátiles y de salón, con una experiencia única de juego.</p>
+            <div class="product-price">Precio: $300</div>
+          </div>
+
+          <div
+            class="product"
+            data-item="iphone_5"
+            data-title="iPhone 5"
+            data-description="Smartphone de Apple"
+            data-votes="0"
+            data-price="$200"
+          >
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXT4fxcMaK0LuOSB92HApoLT-BU6wYp-ru2Q&s" alt="iPhone 5" />
+            <div class="vote-count">Votos: 0</div>
+            <p>Smartphone con una pantalla más grande y un diseño elegante, que marcó un hito en la historia de los iPhones.</p>
+            <div class="product-price">Precio: $200</div>
+          </div>
+
+          <div
+            class="product"
+            data-item="macbook_air"
+            data-title="MacBook Air"
+            data-description="Portátil de Apple"
+            data-votes="0"
+            data-price="$1000"
+          >
+            <img src="img/image-removebg-preview (2).png">
+            <div class="vote-count">Votos: 0</div>
+            <p>Portátil ultradelgado y ligero, ideal para quienes necesitan potencia y portabilidad sin sacrificar el rendimiento.</p>
+            <div class="product-price">Precio: $1000</div>
+          </div>
+
+          <div
+            class="product"
+            data-item="monitor_ultrawade"
+            data-title="Monitor"
+            data-description="Monitor ultrawide para una experiencia de visualización inmersiva"
+            data-votes="0"
+            data-price="$250"
+          >
+            <img src="img/images-removebg-preview.png" alt="Monitor">
+            <div class="vote-count">Votos: 0</div>
+            <p>Monitor panorámico que permite una mayor productividad y comodidad visual para el trabajo y el entretenimiento.</p>
+            <div class="product-price">Precio: $250</div>
+          </div>
+
+          <div
+            class="product"
+            data-item="iphone_16"
+            data-title="iPhone 16"
+            data-description="Smartphone de Apple"
+            data-votes="0"
+            data-price="$1200"
+          >
+            <img src="img/image-removebg-preview (5).png" alt="iPhone 16" />
+            <div class="vote-count">Votos: 0</div>
+            <p>El último modelo de iPhone con cámaras mejoradas y un diseño vanguardista que redefine el futuro de los smartphones.</p>
+            <div class="product-price">Precio: $1200</div>
           </div>
         </div>
+
+        <!-- Contenedor para el total de votos -->
+        <div class="total-votes-container">
+          <h2>Total de votos: <span id="total-votes">0</span></h2>
+        </div>
+
         <div class="btn-container">
-          <button type="submit" class="disabled" id="btn-register-vote">
+          <button type="submit" class="disabled" id="btn-register-vote" disabled>
             Registrar voto
           </button>
         </div>
@@ -61,5 +173,9 @@
     <div class="overlay"></div>
 
     <script src="js/script.js"></script>
+    <script src="js/voto.js"></script>
+    <script src="js/contador.js"></script>
+    <script src="js/theme-toggle.js"></script>
+
   </body>
 </html>

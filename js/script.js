@@ -16,22 +16,25 @@ function addTooltipToDiv(product) {
 }
 
 for (let product of products) {
-  // agregamos un tooltip a cada div
+  // Ensure initial vote count is set to 0
+  if (!product.dataset.votes) {
+    product.dataset.votes = 0;
+  }
+
   addTooltipToDiv(product);
 
   product.addEventListener("click", function () {
-    // primero debemos reiniciar los botones, es decir quitarle el border
+    // Remove the "selected" class from all products
     for (let item of products) {
-      // va a buscar y eliminar la clase selected del div
       item.classList.remove("selected");
     }
 
-    // va a agregar la clase selected al div
+    // Add the "selected" class to the clicked product
     product.classList.add("selected");
 
     selectedItem = product.dataset.item;
-
     btnRegisterVote.classList.remove("disabled");
+    btnRegisterVote.disabled = false;
   });
 }
 
@@ -55,7 +58,7 @@ function closeModal() {
 }
 
 function createContentModal(product) {
-  // esto sirve para limpiar el contenido dentro del modal y evitar duplicados
+  // Clear the modal content to prevent duplicates
   modal.innerHTML = "";
   const modalContent = document.createElement("div");
   modalContent.classList.add("modal-content");
@@ -68,11 +71,12 @@ function createContentModal(product) {
 
   const description = document.createElement("p");
   description.textContent = product.description;
+
   const voteQty = document.createElement("p");
-  voteQty.textContent = "Cantidad de votos: 0";
+  voteQty.textContent = `Cantidad de votos: ${product.votes}`;
 
   const btnClose = document.createElement("button");
-  btnClose.textContent = "Cancelar";
+  btnClose.textContent = "Cerrar";
 
   btnClose.addEventListener("click", closeModal);
 
@@ -85,16 +89,40 @@ function createContentModal(product) {
   modal.appendChild(modalContent);
 }
 
+// Handle the vote form submission
 voteForm.addEventListener("submit", function (event) {
-  // Paso1: es evitar que el formulario recargue la pagina
   event.preventDefault();
 
   const currentSelectedProduct = getCurrentSelectedProduct();
 
+  if (!currentSelectedProduct) {
+    alert("Por favor, selecciona un producto antes de votar.");
+    return;
+  }
+
+  // Update the vote count for the selected product
+  const productVotes = parseInt(currentSelectedProduct.dataset.votes) + 1;
+  currentSelectedProduct.dataset.votes = productVotes;
+
+  // Update the vote count in the product UI
+  const voteCountElement = currentSelectedProduct.querySelector(".vote-count");
+  voteCountElement.textContent = `Votos: ${productVotes}`;
+
+  // Mark the product as voted (disable further voting)
+  currentSelectedProduct.classList.add("voted");
+
+  // Open modal to show the updated vote count
   openModal();
   createContentModal({
-    image: "",
+    image: currentSelectedProduct.querySelector("img").src,
     title: currentSelectedProduct.dataset.title,
     description: currentSelectedProduct.dataset.description,
+    votes: productVotes,
   });
+
+  // Disable the "Register Vote" button after voting
+  btnRegisterVote.disabled = true;
 });
+
+// Close the modal when clicking on the overlay
+overlay.addEventListener("click", closeModal);
