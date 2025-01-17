@@ -1,33 +1,65 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Votación de Productos</title>
-    <link rel="stylesheet" href="css/styles.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Layout Responsive</title>
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/styles.css" />
+  </head>
+  <body>
     <div class="container">
-        <h1>Vota por tu producto favorito</h1>
-        <div id="productosContainer" class="productos">
-            <div class="producto" data-nombre="Producto 1" data-descripcion="Descripción del Producto 1">
-                <img src="https://via.placeholder.com/150" alt="Producto 1">
-                <p>Producto 1</p>
-            </div>
-            <div class="producto" data-nombre="Producto 2" data-descripcion="Descripción del Producto 2">
-                <img src="https://via.placeholder.com/150" alt="Producto 2">
-                <p>Producto 2</p>
-            </div>
-            <div class="producto" data-nombre="Producto 3" data-descripcion="Descripción del Producto 3">
-                <img src="https://via.placeholder.com/150" alt="Producto 3">
-                <p>Producto 3</p>
-            </div>
+      <header>
+        <div class="logo">
+          <img src="https://github.com/linder3hs/vote-tracker/blob/main/images/vote_tracker_logo.png?raw=true" width="200" alt="" />
         </div>
-        <button id="btnConfirmar" style="display:none">Confirmar Voto</button>
-        <p id="feedback" class="feedback"></p>
-        <div id="tooltip" class="tooltip"></div>
+        <div class="nav-buttons">
+          <button class="nav-button">Inicio</button>
+          <button class="nav-button">Stats</button>
+        </div>
+      </header>
     </div>
+    <main>
+      <form id="vote-form">
+        <div class="products-container">
+          <div
+            class="product"
+            data-item="game_boy"
+            data-title="Game Boy"
+            data-description="Videoconsola portátil de Nintendo"
+          >
+            <img src="https://github.com/linder3hs/vote-tracker/blob/main/images/game_boy_color.png?raw=true" alt="" />
+          </div>
+          <div
+            class="product"
+            data-item="ipod_classic"
+            data-title="Ipod classic"
+            data-description="Reproductor de música digital de Apple"
+          >
+            <img src="https://github.com/linder3hs/vote-tracker/blob/main/images/ipod_classic.png?raw=true" alt="" />
+          </div>
+          <div
+            class="product"
+            data-item="playstation_2"
+            data-title="Playstation 2"
+            data-description="Consola de videojuegos de Sony"
+          >
+            <img src="https://github.com/linder3hs/vote-tracker/blob/main/images/playstation_2.png?raw=true" alt="" />
+          </div>
+        </div>
+        <div class="btn-container">
+          <button type="submit" class="disabled" id="btn-register-vote">
+            Registrar voto
+          </button>
+        </div>
+      </form>
+    </main>
+    <footer>
+      <div>footer</div>
+    </footer>
+    <div class="modal"></div>
+    <div class="overlay"></div>
 
     <script src="js/script.js"></script>
-</body>
+  </body>
 </html>
