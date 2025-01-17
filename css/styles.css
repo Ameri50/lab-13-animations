@@ -1,253 +1,77 @@
-/* Reset general */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Arial', sans-serif;
-}
-
-/* Estilo general del cuerpo */
 body {
-    background-color: #f5f5f5;
-    color: #333;
-    font-size: 16px;
-    line-height: 1.6;
-}
-
-/* Encabezado */
-header {
-    background-color: #fff;
-    border-bottom: 2px solid #f0f0f0;
-    padding: 15px 40px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-header img {
-    height: 50px;
-}
-
-header nav a {
-    color: #333;
-    margin: 0 15px;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 16px;
-}
-
-header nav a:hover {
-    color: #f39c12;
-}
-
-/* Botón de modo oscuro */
-button#darkModeToggle {
-    background-color: #1f1609;
-    color: #fff;
-    border: none;
-    padding: 8px 20px;
-    cursor: pointer;
-    font-size: 14px;
-    border-radius: 20px;
-    transition: all 0.3s ease;
-}
-
-button#darkModeToggle:hover {
-    background-color: #291d13;
-}
-
-/* Contenido principal */
-main {
-    margin-top: 100px;
-    display: flex;
-    justify-content: space-between;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
     padding: 20px;
-}
-
-/* Barra lateral (filtros) */
-aside {
-    width: 20%;
-    background: #fff;
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-aside h3 {
-    font-size: 18px;
-    color: #372a14;
-    margin-bottom: 10px;
-}
-
-aside ul {
-    list-style: none;
-    margin-top: 10px;
-}
-
-aside ul li {
-    margin: 10px 0;
-}
-
-aside ul li label {
-    font-size: 14px;
-    color: #333;
-    cursor: pointer;
-}
-
-/* Área de productos */
-.products {
-    width: 75%;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px; /* Aumenta el espacio entre los cuadros */
-}
-
-.product {
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
     text-align: center;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
     padding: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.product:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+h1 {
+    color: #333;
 }
 
-.product img {
-    width: 100%;
-    height: 180px;
+.productos {
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 0;
+}
+
+.producto {
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.producto:hover {
+    transform: scale(1.05);
+}
+
+.producto img {
+    width: 150px;
+    height: 150px;
     object-fit: cover;
-    border-radius: 10px;
-    margin-bottom: 15px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
 }
 
-.product .discount {
-    background-color: #31201e;
-    color: #fff;
-    padding: 5px 10px;
-    font-size: 12px;
-    position: absolute;
-    top: 15px;
-    left: 15px;
-    border-radius: 5px;
+.producto.seleccionado img {
+    border-color: #007bff;
+    box-shadow: 0px 0px 12px rgba(0, 123, 255, 0.5);
 }
 
-.product p {
-    font-size: 14px;
-    color: #555;
-    margin: 10px 0;
-}
-
-.product .price {
-    font-size: 18px;
+.feedback {
+    color: green;
     font-weight: bold;
-    color: #f39c12;
-    margin-bottom: 10px;
 }
 
-.product .old-price {
-    font-size: 14px;
-    color: #999;
-    text-decoration: line-through;
-}
-
-.product button {
-    background-color: #371810;
+#btnConfirmar {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007bff;
     color: white;
     border: none;
-    padding: 10px 20px;
+    border-radius: 5px;
     cursor: pointer;
-    border-radius: 30px;
-    font-size: 14px;
-    transition: all 0.3s ease;
-}
-
-.product button:hover {
-    background-color: #24190b;
-}
-
-/* Pie de página */
-footer {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 20px 0;
-    font-size: 14px;
     margin-top: 20px;
 }
 
-/* Modo oscuro */
-body.dark-mode {
-    background-color: #181818;
-    color: #f5f5f5;
-}
-
-header.dark-mode {
-    background-color: #333;
-}
-
-header.dark-mode nav a {
-    color: #f5f5f5;
-}
-
-.product.dark-mode {
-    background-color: #333;
-    color: #f5f5f5;
-}
-
-.product.dark-mode button {
-    background-color: #555;
-}
-
-footer.dark-mode {
-    background-color: #222;
-}
-
-/* Estilo del carrito */
-#carrito {
-    width: 300px;
-    background: #fff;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    position: fixed;
-    top: 100px;
-    right: 20px;
-    z-index: 1000;
-}
-
-#carrito h3 {
-    font-size: 18px;
-    color: #41331d;
-    margin-bottom: 15px;
-}
-
-#carrito p {
-    font-size: 14px;
-    color: #333;
-    margin-bottom: 15px;
-}
-
-#carrito button {
-    background-color: #34100b;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    border-radius: 30px;
-    font-size: 14px;
-    transition: all 0.3s ease;
-}
-
-#carrito button:hover {
+#btnConfirmar:hover {
     background-color: #0056b3;
+}
+
+.tooltip {
+    position: absolute;
+    background-color: black;
+    color: white;
+    padding: 5px;
+    border-radius: 4px;
+    display: none;
+    font-size: 12px;
 }

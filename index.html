@@ -1,210 +1,33 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vote Tracker</title>
+    <title>Votación de Productos</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
-
 <body>
-    <header>
-        <img src="img/image-removebg-preview.png" alt="logo" class="image">
-        <nav>
-            <a href="#">Inicio</a>
-            <a href="#">Stats</a>
-        </nav>
-        <button id="darkModeToggle">🌙 Modo Oscuro</button>             
-    </header>
-
-    <main>
-
-<!-- Cart Modal or Section -->
-<div id="carrito">
-    <div id="carritoItems"></div>
-    <p>Total: $<span id="totalPrice">0.00</span></p>
-    <button id="finalizarCompraButton">Finalizar Compra</button>
-</div>
-
-
-
-        <!-- Botón para comprar todo -->
-        <div class="buy-all-container">
-            <button id="buyAllButton">🛒 Comprar Todo</button>
-        </div>
-
-        <!-- Lista de Productos -->
-        <div class="products">
-            <!-- Producto 1 -->
-            <div class="product" id="product1">
-                <img src="img/WhatsApp Image 2025-01-14 at 22.48.38.jpeg" alt="Producto 1" class="product-image">
+    <div class="container">
+        <h1>Vota por tu producto favorito</h1>
+        <div id="productosContainer" class="productos">
+            <div class="producto" data-nombre="Producto 1" data-descripcion="Descripción del Producto 1">
+                <img src="https://via.placeholder.com/150" alt="Producto 1">
                 <p>Producto 1</p>
-                <button class="voteUp">👍 Votar a favor</button>
-                <button class="voteDown">👎 Votar en contra</button>
-                <p>Votos a favor: <span class="countUp">0</span></p>
-                <p>Votos en contra: <span class="countDown">0</span></p>
-                <button class="addToCart">🛒 Agregar al carrito</button>
             </div>
-
-            <!-- Producto 2 -->
-            <div class="product" id="product2">
-                <img src="img/WhatsApp Image 2025-01-14 at 22.48.44.jpeg" alt="Producto 2" class="product-image">
+            <div class="producto" data-nombre="Producto 2" data-descripcion="Descripción del Producto 2">
+                <img src="https://via.placeholder.com/150" alt="Producto 2">
                 <p>Producto 2</p>
-                <button class="voteUp">👍 Votar a favor</button>
-                <button class="voteDown">👎 Votar en contra</button>
-                <p>Votos a favor: <span class="countUp">0</span></p>
-                <p>Votos en contra: <span class="countDown">0</span></p>
-                <button class="addToCart">🛒 Agregar al carrito</button>
             </div>
-
-            <!-- Producto 3 -->
-            <div class="product" id="product3">
-                <img src="img/WhatsApp Image 2025-01-14 at 22.48.50.jpeg" alt="Producto 3" class="product-image">
+            <div class="producto" data-nombre="Producto 3" data-descripcion="Descripción del Producto 3">
+                <img src="https://via.placeholder.com/150" alt="Producto 3">
                 <p>Producto 3</p>
-                <button class="voteUp">👍 Votar a favor</button>
-                <button class="voteDown">👎 Votar en contra</button>
-                <p>Votos a favor: <span class="countUp">0</span></p>
-                <p>Votos en contra: <span class="countDown">0</span></p>
-                <button class="addToCart">🛒 Agregar al carrito</button>
             </div>
+        </div>
+        <button id="btnConfirmar" style="display:none">Confirmar Voto</button>
+        <p id="feedback" class="feedback"></p>
+        <div id="tooltip" class="tooltip"></div>
+    </div>
 
-            <!-- Producto 4 -->
-            <div class="product" id="product4">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpxCIJRfgrJJA_qorVlcWl721l6BkxK9zDRg&s" alt="Producto 4" class="product-image">
-                <p>Producto 4</p>
-                <button class="voteUp">👍 Votar a favor</button>
-                <button class="voteDown">👎 Votar en contra</button>
-                <p>Votos a favor: <span class="countUp">0</span></p>
-                <p>Votos en contra: <span class="countDown">0</span></p>
-                <button class="addToCart">🛒 Agregar al carrito</button>
-            </div>
-
-            <!-- Producto 5 -->
-            <div class="product" id="product5">
-                <img src="https://m.media-amazon.com/images/I/51tbWVPtckL._SL1500_.jpg" alt="Producto 5" class="product-image">
-                <p>Producto 5</p>
-                <button class="voteUp">👍 Votar a favor</button>
-                <button class="voteDown">👎 Votar en contra</button>
-                <p>Votos a favor: <span class="countUp">0</span></p>
-                <p>Votos en contra: <span class="countDown">0</span></p>
-                <button class="addToCart">🛒 Agregar al carrito</button>
-            </div>
-
-            <!-- Producto 6 -->
-            <div class="product" id="product6">
-                <img src="https://gmedia.playstation.com/is/image/SIEPDC/ps5-pro-dualsense-image-block-01-en-16aug24?$facebook$" alt="Producto 6" class="product-image">
-                <p>Producto 6</p>
-                <button class="voteUp">👍 Votar a favor</button>
-                <button class="voteDown">👎 Votar en contra</button>
-                <p>Votos a favor: <span class="countUp">0</span></p>
-                <p>Votos en contra: <span class="countDown">0</span></p>
-                <button class="addToCart">🛒 Agregar al carrito</button>
-            </div>
-
-             <!-- Producto 7 -->
-             <div class="product" id="product7">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-lkl_fzdxn8w5pkYW0xrJGsZCxYyzEHnL_A&s" alt="Producto 7" class="product-image">
-                <p>Producto 7</p>
-                <button class="voteUp">👍 Votar a favor</button>
-                <button class="voteDown">👎 Votar en contra</button>
-                <p>Votos a favor: <span class="countUp">0</span></p>
-                <p>Votos en contra: <span class="countDown">0</span></p>
-                <button class="addToCart">🛒 Agregar al carrito</button> <!-- Botón Agregar al carrito -->
-            </div>
-
-            <!-- Producto 8 -->
-            <div class="product" id="product8">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGtSF57VY9AWkYavK_Qdn5I6wN0om4IO-zuw&s" alt="Producto 8" class="product-image">
-                <p>Producto 8</p>
-                <button class="voteUp">👍 Votar a favor</button>
-                <button class="voteDown">👎 Votar en contra</button>
-                <p>Votos a favor: <span class="countUp">0</span></p>
-                <p>Votos en contra: <span class="countDown">0</span></p>
-                <button class="addToCart">🛒 Agregar al carrito</button> <!-- Botón Agregar al carrito -->
-            </div>
-
-            <!-- Producto 9 -->
-            <div class="product" id="product9">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnSNZlqe3rtmEgTRC5V5ofp4Np5tHIKrBXnQ&s" alt="Producto 9" class="product-image">
-                <p>Producto 9</p>
-                <button class="voteUp">👍 Votar a favor</button>
-                <button class="voteDown">👎 Votar en contra</button>
-                <p>Votos a favor: <span class="countUp">0</span></p>
-                <p>Votos en contra: <span class="countDown">0</span></p>
-                <button class="addToCart">🛒 Agregar al carrito</button> <!-- Botón Agregar al carrito -->
-            </div>
-
-            <!-- Producto 10 -->
-            <div class="product" id="product10">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdBhcsUFmUO25CMgbEMOROI-woA1XXDj45Sg&s" alt="Producto 10" class="product-image">
-                <p>Producto 10</p>
-                <button class="voteUp">👍 Votar a favor</button>
-                <button class="voteDown">👎 Votar en contra</button>
-                <p>Votos a favor: <span class="countUp">0</span></p>
-                <p>Votos en contra: <span class="countDown">0</span></p>
-                <button class="addToCart">🛒 Agregar al carrito</button> <!-- Botón Agregar al carrito -->
-            </div>
-
-            <!-- Producto 11 -->
-            <div class="product" id="product11">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-cSV_p04fWA_OAaoqk6MPFz776Zm-XyxKUw&s" alt="Producto 11" class="product-image">
-                <p>Producto 11</p>
-                <button class="voteUp">👍 Votar a favor</button>
-                <button class="voteDown">👎 Votar en contra</button>
-                <p>Votos a favor: <span class="countUp">0</span></p>
-                <p>Votos en contra: <span class="countDown">0</span></p>
-                <button class="addToCart">🛒 Agregar al carrito</button> <!-- Botón Agregar al carrito -->
-            </div>
-
-            <!-- Producto 12 -->
-            <div class="product" id="product12">
-                <img src="https://i.blogs.es/a315ea/glab/450_1000.jpg" alt="Producto 12" class="product-image">
-                <p>Producto 12</p>
-                <button class="voteUp">👍 Votar a favor</button>
-                <button class="voteDown">👎 Votar en contra</button>
-                <p>Votos a favor: <span class="countUp">0</span></p>
-                <p>Votos en contra: <span class="countDown">0</span></p>
-                <button class="addToCart">🛒 Agregar al carrito</button> <!-- Botón Agregar al carrito -->
-            </div>
-
-            <!-- Producto 13 -->
-            <div class="product" id="product13">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_ZqYGucQe65pAV07jW3S9P1Zl58ufztVwJQ&s" alt="Producto 13" class="product-image">
-                <p>Producto 13</p>
-                <button class="voteUp">👍 Votar a favor</button>
-                <button class="voteDown">👎 Votar en contra</button>
-                <p>Votos a favor: <span class="countUp">0</span></p>
-                <p>Votos en contra: <span class="countDown">0</span></p>
-                <button class="addToCart">🛒 Agregar al carrito</button> <!-- Botón Agregar al carrito -->
-            </div>
-
-            <!-- Producto 14 -->
-            <div class="product" id="product14">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSD65E-_gHzgFiVGsXtH0w8_xKkFDEn0wzdjQ&s" alt="Producto 14" class="product-image">
-                <p>Producto 14</p>
-                <button class="voteUp">👍 Votar a favor</button>
-                <button class="voteDown">👎 Votar en contra</button>
-                <p>Votos a favor: <span class="countUp">0</span></p>
-                <p>Votos en contra: <span class="countDown">0</span></p>
-                <button class="addToCart">🛒 Agregar al carrito</button> <!-- Botón Agregar al carrito -->
-            </div>
-
-            <!-- Productos 7-14 (similar structure as above) -->
-
-        </div> <!-- End of .products -->
-    </main>
-
-    <footer>
-        <p>&copy; 2025 Vote Tracker. Todos los derechos reservados.</p>
-    </footer>
-
-    <!-- External JS Files -->
     <script src="js/script.js"></script>
-    <script src="js/modooscuro.js"></script>
-    <script src="js/carritodecompras.js"></script>
-    <script src="js/modal.js"></script>
-    <script src="js/comprar.js"></script>
 </body>
-
 </html>
